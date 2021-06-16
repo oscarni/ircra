@@ -21,7 +21,8 @@
     "build": "microbundle --compress --raw",
     "dev": "microbundle watch",
     "bump": "standard-version",
-    "release": "git push --follow-tags origin master"
+    "release": "git push --follow-tags origin master",
+    "postinstall" : "microbundle --compress --raw"
   },
   "devDependencies": {
     "@types/jest": "^24.0.17",
