@@ -51,7 +51,7 @@ describe('convert method', () => {
     it('converts font to ircra', () => {
         const ircra = new IRCRA()
         const expected = { ircra: 28 }
-        expect(ircra.convert('font', '8b').to('ircra')).toEqual(expected)
+        expect(ircra.convert('font', '8B').to('ircra')).toEqual(expected)
     })
 
     it('converts ircra to yds', () => {
@@ -66,10 +66,10 @@ describe('convert method', () => {
         expect(ircra.convert('yds', '5.11d').to('sport')).toEqual(expected)
     })
 
-    it('converts sport to british', () => {
+    it('converts sport to british_tech', () => {
         const ircra = new IRCRA()
-        const expected = { british: '5c' }
-        expect(ircra.convert('sport', '6b+').to('british')).toEqual(expected)
+        const expected = { british_tech: '5c/6a' }
+        expect(ircra.convert('sport', '6b+').to('british_tech')).toEqual(expected)
     })
 
     // TODO fix duplicate
@@ -121,9 +121,8 @@ describe('scale method', () => {
             { name: 'Fontainebleau', value: 'font' },
             { name: 'IRCRA - Rock Climbing Association', value: 'ircra' },
             { name: 'YDS - Yosemite Decimal System', value: 'yds' },
-            { name: 'French', value: 'french' },
-            { name: 'British - Adjectival', value: 'british' },
-            { name: 'British - Technical', value: 'tech' },
+            { name: 'French', value: 'sport' },
+            { name: 'British - Technical', value: 'british_tech' },
             { name: 'Ewbank', value: 'ewbank' },
             { name: 'Brazilian', value: 'brz' },
             { name: 'UIAA - Associations d’Alpinisme', value: 'uiaa' },

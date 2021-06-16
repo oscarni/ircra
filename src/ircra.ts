@@ -16,7 +16,10 @@ class Classification {
     }
 
     public to(gradeType: string) {
-        const result = grades[this.index.get(this.grade)][gradeType]
+        let result = grades[this.index.get(this.grade)][gradeType]
+        if (Array.isArray(result)) {
+            result = result.join('/');
+        }
         return { [gradeType]: result }
     }
 }
@@ -31,8 +34,7 @@ export default class IRCRA {
         'ircra',
         'yds',
         'sport',
-        'british',
-        'tech',
+        'british_tech',
         'ewbank',
         'brz',
         'uiaa',
@@ -84,14 +86,28 @@ export default class IRCRA {
                 throw new Error('no ' + key + ' key found in grade')
             }
 
+            if (grades[i][key] === null) {
+                continue
+            }
+
             if (['male', 'female'].includes(key)) {
                 map.set(grades[i][key].level, i)
                 continue
             }
             
-            map.set(grades[i][key], i)
+            const gradeValue = grades[i][key];
+            if (Array.isArray(gradeValue)) {
+                const previousGrade = i ? grades[i-1][key] : null;
+                gradeValue.forEach((grade) => {
+                    if (previousGrade === grade) {
+                        return
+                    }
+                    map.set(grade, i)
+                });
+            } else {
+                map.set(grades[i][key], i)
+            }
         }
-
         return map
     }
 
@@ -102,8 +118,7 @@ export default class IRCRA {
             { name: 'IRCRA - Rock Climbing Association', value: 'ircra' },
             { name: 'YDS - Yosemite Decimal System', value: 'yds' },
             { name: 'French', value: 'sport' },
-            { name: 'British - Adjectival', value: 'british' },
-            { name: 'British - Technical', value: 'tech' },
+            { name: 'British - Technical', value: 'british_tech' },
             { name: 'Ewbank', value: 'ewbank' },
             { name: 'Brazilian', value: 'brz' },
             { name: 'UIAA - Associations d’Alpinisme', value: 'uiaa' },
