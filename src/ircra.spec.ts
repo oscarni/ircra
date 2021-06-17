@@ -111,6 +111,12 @@ describe('convert method', () => {
         const expected = { watts: 6 }
         expect(ircra.convert('uiaa_metric', 11.33).to('watts')).toEqual(expected)
     })
+
+    it('converts uiaa_metric to swedish', () => {
+        const ircra = new IRCRA()
+        const expected = { swedish: '10+' }
+        expect(ircra.convert('uiaa_metric', 11.33).to('swedish')).toEqual(expected)
+    })
 })
 
 describe('scale method', () => {
@@ -127,7 +133,8 @@ describe('scale method', () => {
             { name: 'Brazilian', value: 'brz' },
             { name: 'UIAA - Associations d’Alpinisme', value: 'uiaa' },
             { name: 'UIAA Metric', value: 'uiaa_metric' },
-            { name: 'Watts', value: 'watts' }
+            { name: 'Watts', value: 'watts' },
+            { name: 'Swedish', value: 'swedish' }
         ])
     })
 })

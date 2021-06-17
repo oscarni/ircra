@@ -40,6 +40,7 @@ export default class IRCRA {
         'uiaa',
         'uiaa_metric',
         'watts',
+        'swedish',
     ]
 
     constructor() {
@@ -123,7 +124,8 @@ export default class IRCRA {
             { name: 'Brazilian', value: 'brz' },
             { name: 'UIAA - Associations d’Alpinisme', value: 'uiaa' },
             { name: 'UIAA Metric', value: 'uiaa_metric' },
-            { name: 'Watts', value: 'watts' }
+            { name: 'Watts', value: 'watts' },
+            { name: 'Swedish', value: 'swedish' }
         ]
     }
 }
