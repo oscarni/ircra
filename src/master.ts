@@ -35,14 +35,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 1,
         yds: '5.1',
-        sport: '1',
+        sport: '2',
         british_tech: '2',
         ewbank: 4,
         brz: 'I sup',
         uiaa: 'I',
         uiaa_metric: 1.0,
         watts: null,
-        swedish: '3',
+        swedish: '1',
     },
     {
         male: {
@@ -64,7 +64,7 @@ export const grades: Array<Grade> = [
         uiaa: 'II',
         uiaa_metric: 2.0,
         watts: null,
-        swedish: '3+',
+        swedish: '2',
     },
     {
         male: {
@@ -79,14 +79,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 3,
         yds: '5.3',
-        sport: '2+',
+        sport: '3',
         british_tech: '3',
         ewbank: 8,
         brz: 'II sup',
         uiaa: 'III',
         uiaa_metric: 3.0,
         watts: null,
-        swedish: '4-',
+        swedish: '3',
     },
     {
         male: {
@@ -101,14 +101,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 4,
         yds: '5.4',
-        sport: '3-',
+        sport: '4a',
         british_tech: ['3', '4'],
         ewbank: 8,
         brz: 'III',
         uiaa: 'III+',
         uiaa_metric: 3.5,
         watts: null,
-        swedish: '4',
+        swedish: '4-',
     },
     {
         male: {
@@ -123,14 +123,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 5,
         yds: '5.5',
-        sport: '3',
+        sport: '4b',
         british_tech: ['3', '4'],
         ewbank: 10,
         brz: 'IV',
         uiaa: 'IV',
         uiaa_metric: 4.0,
         watts: null,
-        swedish: '4+',
+        swedish: '4',
     },
     {
         male: {
@@ -145,14 +145,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 6,
         yds: '5.6',
-        sport: '3+',
+        sport: '4c',
         british_tech: '4',
         ewbank: 12,
         brz: 'V',
         uiaa: 'V-',
         uiaa_metric: 4.66,
         watts: 0.0,
-        swedish: '5-',
+        swedish: '4+',
     },
     {
         male: {
@@ -167,14 +167,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 7,
         yds: '5.7',
-        sport: '4',
+        sport: '5a',
         british_tech: '4',
         ewbank: 14,
         brz: 'V',
         uiaa: 'V',
         uiaa_metric: 5.0,
         watts: 0.25,
-        swedish: '5',
+        swedish: '5-',
     },
     {
         male: {
@@ -189,14 +189,14 @@ export const grades: Array<Grade> = [
         font: null,
         ircra: 8,
         yds: '5.8',
-        sport: '4+',
+        sport: '5b',
         british_tech: ['4', '5a'],
         ewbank: 14,
         brz: 'V sup',
         uiaa: 'V+',
         uiaa_metric: 5.33,
         watts: 0.5,
-        swedish: '5+',
+        swedish: '5',
     },
     {
         male: {
@@ -211,7 +211,7 @@ export const grades: Array<Grade> = [
         font: '<2',
         ircra: 9,
         yds: '5.9',
-        sport: '5',
+        sport: '5c',
         british_tech: '5a',
         ewbank: 16,
         brz: 'V sup',
@@ -235,14 +235,14 @@ export const grades: Array<Grade> = [
         font: '2',
         ircra: 10,
         yds: '5.10a',
-        sport: '5+',
+        sport: ['5c', '6a'],
         british_tech: '5a',
         ewbank: 18,
         brz: 'VI',
         uiaa: 'VI',
         uiaa_metric: 6.0,
         watts: 1.0,
-        swedish: '5+',
+        swedish: '6-',
     },
     {
         male: {
@@ -330,7 +330,7 @@ export const grades: Array<Grade> = [
         uiaa: ['VII', 'VII+'],
         uiaa_metric: [7.0, 7.33],
         watts: 2.0,
-        swedish: '7-',
+        swedish: ['6+', '7-'],
     },
     {
         male: {
@@ -418,7 +418,7 @@ export const grades: Array<Grade> = [
         uiaa: 'VIII+',
         uiaa_metric: 8.33,
         watts: 3.0,
-        swedish: '7+',
+        swedish: ['7+', '8-'],
     },
     {
         male: {
@@ -484,7 +484,7 @@ export const grades: Array<Grade> = [
         uiaa: 'IX',
         uiaa_metric: 9.0,
         watts: 3.75,
-        swedish: '8',
+        swedish: ['8', '8+'],
     },
     {
         male: {
@@ -550,7 +550,7 @@ export const grades: Array<Grade> = [
         uiaa: ['X-', 'X'],
         uiaa_metric: [9.66, 10.0],
         watts: 4.5,
-        swedish: '9-',
+        swedish: ['9-', '9'],
     },
     {
         male: {
@@ -594,7 +594,7 @@ export const grades: Array<Grade> = [
         uiaa: 'X+',
         uiaa_metric: 10.33,
         watts: 5.0,
-        swedish: '9',
+        swedish: ['9', '9+'],
     },
     {
         male: {
