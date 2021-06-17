@@ -72,6 +72,8 @@ export default class IRCRA {
             throw new Error(`${gradeType} is unsupported`)
         }
 
+        grade = this._toLowerCase(grade);
+        
         if (!this.maps.has(gradeType)) {
             let map = this.maps.set(gradeType, this._index(gradeType))
             return new Classification(map.get(gradeType), grade)
@@ -103,16 +105,23 @@ export default class IRCRA {
                     if (previousGrade === grade) {
                         return
                     }
-                    map.set(grade, i)
+                    map.set(this._toLowerCase(grade), i)
                 });
             } else {
                 if (previousGrade === grades[i][key]) {
                     continue
-                }
-                map.set(grades[i][key], i)
+                }   
+                map.set(this._toLowerCase(grades[i][key]), i)
             }
         }
         return map
+    }
+
+    private _toLowerCase(value: any) {
+        if (typeof value === 'string') {
+            return value.toLowerCase();
+        }
+        return value;
     }
 
     public scale() {

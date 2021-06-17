@@ -72,6 +72,12 @@ describe('convert method', () => {
         expect(ircra.convert('sport', '6b+').to('british_tech')).toEqual(expected)
     })
 
+    it('converts sport to british_tech - case insensitive', () => {
+        const ircra = new IRCRA()
+        const expected = { british_tech: '5c/6a' }
+        expect(ircra.convert('sport', '6B+').to('british_tech')).toEqual(expected)
+    })
+
     // TODO fix duplicate
     // it('converts british to tech', () => {
     //     const ircra = new IRCRA()
