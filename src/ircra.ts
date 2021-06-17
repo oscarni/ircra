@@ -97,8 +97,8 @@ export default class IRCRA {
             }
             
             const gradeValue = grades[i][key];
+            const previousGrade = i ? grades[i-1][key] : null;
             if (Array.isArray(gradeValue)) {
-                const previousGrade = i ? grades[i-1][key] : null;
                 gradeValue.forEach((grade) => {
                     if (previousGrade === grade) {
                         return
@@ -106,6 +106,9 @@ export default class IRCRA {
                     map.set(grade, i)
                 });
             } else {
+                if (previousGrade === grades[i][key]) {
+                    continue
+                }
                 map.set(grades[i][key], i)
             }
         }
