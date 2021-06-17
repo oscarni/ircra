@@ -22,7 +22,10 @@
     "dev": "microbundle watch",
     "bump": "standard-version",
     "release": "git push --follow-tags origin master",
-    "postinstall" : "microbundle --compress --raw"
+    "postinstall": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^4.3.4"
   },
   "devDependencies": {
     "@types/jest": "^24.0.17",
