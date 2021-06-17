@@ -562,7 +562,7 @@ export const grades: Array<Grade> = [
             level: 4,
         },
         vermin: 'V10',
-        font: ['7C', '7C+'],
+        font: '7C+',
         ircra: 25,
         yds: '5.13d',
         sport: '8b',
