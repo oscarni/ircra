@@ -8,7 +8,7 @@ interface Grade {
     female: Gender
     vermin: null | string | string[]
     font: null | string | string[]
-    ircra: number
+    ircra: number | number[]
     yds: string | string[]
     sport: string | string[]
     british_tech: null | string | string[]
@@ -242,7 +242,7 @@ export const grades: Array<Grade> = [
         uiaa: 'VI',
         uiaa_metric: 6.0,
         watts: 1.0,
-        swedish: '6-',
+        swedish: ['5+', '6-'],
     },
     {
         male: {
@@ -364,6 +364,28 @@ export const grades: Array<Grade> = [
             level: 3,
         },
         vermin: 'V2',
+        font: '6A',
+        ircra: [15, 16],
+        yds: ['5.11c', '5.11c'],
+        sport: ['6c', '6c+'],
+        british_tech: ['6a', '6b'],
+        ewbank: 22,
+        brz: '7b',
+        uiaa: 'VIII-',
+        uiaa_metric: 7.66,
+        watts: 2.5,
+        swedish: ['7-', '7'],
+    },
+    {
+        male: {
+            group: 'Intermediate',
+            level: 2,
+        },
+        female: {
+            group: 'Advanced',
+            level: 3,
+        },
+        vermin: 'V2',
         font: ['6A', '6A+'],
         ircra: 16,
         yds: '5.11c',
@@ -385,8 +407,52 @@ export const grades: Array<Grade> = [
             group: 'Advanced',
             level: 3,
         },
+        vermin: ['V2', 'V3'],
+        font: '6A+',
+        ircra: [16, 17],
+        yds: ['5.11c', '5.11d'],
+        sport: ['6c+', '7a'],
+        british_tech: ['6a', '6b'],
+        ewbank: [22, 23],
+        brz: '7b',
+        uiaa: 'VIII-',
+        uiaa_metric: 7.66,
+        watts: 2.5,
+        swedish: ['7', '7+'],
+    },
+    {
+        male: {
+            group: 'Intermediate',
+            level: 2,
+        },
+        female: {
+            group: 'Advanced',
+            level: 3,
+        },
         vermin: 'V3',
         font: ['6A+', '6B'],
+        ircra: 17,
+        yds: '5.11d',
+        sport: '7a',
+        british_tech: ['6a', '6b'],
+        ewbank: 23,
+        brz: '7c',
+        uiaa: 'VIII',
+        uiaa_metric: 8.0,
+        watts: 2.75,
+        swedish: '7+',
+    },
+    {
+        male: {
+            group: 'Intermediate',
+            level: 2,
+        },
+        female: {
+            group: 'Advanced',
+            level: 3,
+        },
+        vermin: ['V3', 'V4'],
+        font: '6B',
         ircra: 17,
         yds: '5.11d',
         sport: '7a',
@@ -429,6 +495,28 @@ export const grades: Array<Grade> = [
             group: 'Advanced',
             level: 3,
         },
+        vermin: ['V4', 'V5'],
+        font: '6C',
+        ircra: [18, 19],
+        yds: ['5.12a', '5.12b'],
+        sport: ['7a+', '7b'],
+        british_tech: ['6b', '6c'],
+        ewbank: [24, 25],
+        brz: '8b',
+        uiaa: ['VIII+', 'IX-'],
+        uiaa_metric: [8.33, 8.66],
+        watts: 3.25,
+        swedish: '8-',
+    },
+    {
+        male: {
+            group: 'Advanced',
+            level: 3,
+        },
+        female: {
+            group: 'Advanced',
+            level: 3,
+        },
         vermin: 'V5',
         font: ['6C', '6C+'],
         ircra: 19,
@@ -441,6 +529,28 @@ export const grades: Array<Grade> = [
         uiaa_metric: [8.33, 8.66],
         watts: 3.25,
         swedish: '8-',
+    },
+    {
+        male: {
+            group: 'Advanced',
+            level: 3,
+        },
+        female: {
+            group: 'Advanced',
+            level: 3,
+        },
+        vermin: ['V5', 'V6'],
+        font: '6C+',
+        ircra: [19, 20],
+        yds: ['5.12b', '5.12c'],
+        sport: ['7b', '7b+'],
+        british_tech: ['6b', '6c'],
+        ewbank: [25, 26],
+        brz: ['8b', '8c'],
+        uiaa: 'IX-',
+        uiaa_metric: 8.66,
+        watts: [3.25, 3.5],
+        swedish: ['8-', '8'],
     },
     {
         male: {
@@ -748,6 +858,6 @@ export const grades: Array<Grade> = [
         uiaa: 'XII+',
         uiaa_metric: 12.33,
         watts: 6.75,
-        swedish: '11+'
+        swedish: '11+',
     },
 ]
