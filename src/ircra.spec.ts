@@ -51,14 +51,14 @@ describe('convert method', () => {
 
     it('converts font to ircra', () => {
         const ircra = new IRCRA()
-        const expected = { ircra: 28 }
+        const expected = { ircra: '28' }
         expect(ircra.convert('font', '8B').to('ircra')).toEqual(expected)
     })
 
     it('converts ircra to yds', () => {
         const ircra = new IRCRA()
         const expected = { yds: '5.12d' }
-        expect(ircra.convert('ircra', 21).to('yds')).toEqual(expected)
+        expect(ircra.convert('ircra', '21').to('yds')).toEqual(expected)
     })
 
     it('converts yds to sport', () => {
@@ -102,7 +102,7 @@ describe('convert method', () => {
     it('converts ewbank to brz', () => {
         const ircra = new IRCRA()
         const expected = { brz: '12b' }
-        expect(ircra.convert('ewbank', 37).to('brz')).toEqual(expected)
+        expect(ircra.convert('ewbank', '37').to('brz')).toEqual(expected)
     })
 
 
@@ -114,21 +114,27 @@ describe('convert method', () => {
 
     it('converts uiaa to uiaa_metric', () => {
         const ircra = new IRCRA()
-        const expected = { uiaa_metric: 9.33 }
+        const expected = { uiaa_metric: '9.33' }
         expect(ircra.convert('uiaa', 'IX+').to('uiaa_metric')).toEqual(expected)
     })
 
     // TODO fix duplicate
     it('converts uiaa_metric to watts', () => {
         const ircra = new IRCRA()
-        const expected = { watts: 6 }
-        expect(ircra.convert('uiaa_metric', 11.33).to('watts')).toEqual(expected)
+        const expected = { watts: '6.0' }
+        expect(ircra.convert('uiaa_metric', '11.33').to('watts')).toEqual(expected)
     })
 
     it('converts uiaa_metric to swedish', () => {
         const ircra = new IRCRA()
         const expected = { swedish: '10+' }
-        expect(ircra.convert('uiaa_metric', 11.33).to('swedish')).toEqual(expected)
+        expect(ircra.convert('uiaa_metric', '11.33').to('swedish')).toEqual(expected)
+    })
+
+    it('converts uiaa_metric to ewbank', () => {
+        const ircra = new IRCRA()
+        const expected = { ewbank: '36' }
+        expect(ircra.convert('uiaa_metric', '11.33').to('ewbank')).toEqual(expected)
     })
 })
 
