@@ -4,9 +4,9 @@ import { grades } from './master'
 
 class Classification {
     index: Map<any, any>
-    grade: string|number
+    grade: string
 
-    constructor(index: Map<any, any>, grade: string|number) {
+    constructor(index: Map<any, any>, grade: string) {
         if (!grade) {
             throw new Error('grade is required')
         }
@@ -16,11 +16,16 @@ class Classification {
     }
 
     public to(gradeType: string) {
-        let result = grades[this.index.get(this.grade)][gradeType]
-        if (Array.isArray(result)) {
-            result = result.join('/');
+        let result = grades[this.index.get(this.grade)] ||
+            grades[this.index.get(this.grade.toUpperCase())] ||
+            grades[this.index.get(this.grade.toLowerCase())]
+
+        let resultGrade = result[gradeType]
+
+        if (Array.isArray(resultGrade)) {
+            resultGrade = resultGrade.join('/');
         }
-        return { [gradeType]: result }
+        return { [gradeType]: resultGrade }
     }
 }
 
@@ -67,12 +72,10 @@ export default class IRCRA {
         }
     }
 
-    public convert(gradeType: string = '', grade: string|number = '') {
+    public convert(gradeType: string = '', grade: string = '') {
         if (gradeType in this.supportedTypes) {
             throw new Error(`${gradeType} is unsupported`)
         }
-
-        grade = this._toLowerCase(grade);
         
         if (!this.maps.has(gradeType)) {
             let map = this.maps.set(gradeType, this._index(gradeType))
@@ -105,23 +108,16 @@ export default class IRCRA {
                     if (previousGrade === grade) {
                         return
                     }
-                    map.set(this._toLowerCase(grade), i)
+                    map.set(grade, i)
                 });
             } else {
                 if (previousGrade === grades[i][key]) {
                     continue
                 }   
-                map.set(this._toLowerCase(grades[i][key]), i)
+                map.set(grades[i][key], i)
             }
         }
         return map
-    }
-
-    private _toLowerCase(value: any) {
-        if (typeof value === 'string') {
-            return value.toLowerCase();
-        }
-        return value;
     }
 
     public scale() {
